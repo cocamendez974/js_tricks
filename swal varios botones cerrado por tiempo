@@ -18,19 +18,16 @@
 		switch (value) {
 			case "guardar":
 				swal("Elemento guardado", {
-					buttons: false,
 					timer: 1000,
 				  });
 				break;
 			case "descartar":	// sigue adelante y remueve los elementos de esa clase
 				swal("Elemento descartado",  {
-					buttons: false,
 					timer: 1000,
 				  });
 				break;
 			case "revisar":
 				swal("Redirigiendo",  {
-					buttons: false,
 					timer: 1000,
 				  });
 				break;
