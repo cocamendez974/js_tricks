@@ -1,0 +1,45 @@
+/**
+ * 
+async function confirm(message) {
+	return swal({
+		text: message,
+		buttons: true
+	});
+}
+Then use it in the if statement prefixed with await as if it were just like a form of confirm() and as such, it would also work as expected:
+
+if (!await confirm('Are you sure?')) {
+	return;
+} 
+*/
+async function elementoSinGuardar(clase) {
+	var elemento = document.querySelector(`.${clase}`);
+	if (elemento) {
+		if(await confirmarRevisar()){
+			var anchor = document.createElement('a');
+			anchor.href = '#new';
+			anchor.click();
+			recordarGuardar('btnGuardar');
+			return true;
+		}else{
+			return false;
+		}
+	}
+}
+async function confirmarRevisar() {
+	return (
+		swal("Tiene un elemento sin guardar", {
+			buttons: {
+				revisar: {
+					text: "Revisar",
+					value: true,
+				},
+				descartar: {
+					text: "Descartar",
+					value: false,
+				},
+			},
+			allowEscapeKey: "true",
+		})
+	);
+}
